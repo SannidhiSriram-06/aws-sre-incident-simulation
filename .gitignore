@@ -1,6 +1,5 @@
 # Local reference files
-execution_reference.md
-terminal_history.md
+reference_logs/
 
 # VPN files and certs
 *.ovpn

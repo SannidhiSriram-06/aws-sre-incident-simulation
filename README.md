@@ -26,7 +26,7 @@ A critical customer data record was deleted, requiring a restore from AWS Backup
   - [KB-001: Diagnosing "Application Down" Reports](kb_articles/KB-001_network_diagnostics.md)
   - [KB-002: Restoring EC2 Instances via AWS Backup](kb_articles/KB-002_aws_backup_restore.md)
 - **Customer Communications:**
-  - [Customer Communication Samples](customer_communications.md)
+  - [Customer Communication Samples](communications/customer_communications.md)
 - **Architecture & Setup:**
   - [Tech Stack Details](docs/technical_architecture.md)
   - [Project Requirements (PRD)](docs/requirements_and_goals.md)
