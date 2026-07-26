@@ -1,6 +1,6 @@
 # Local reference files
-04_GROUND_TRUTH.md
-Terminal.md
+execution_reference.md
+terminal_history.md
 
 # VPN files and certs
 *.ovpn

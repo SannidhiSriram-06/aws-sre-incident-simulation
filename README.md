@@ -20,17 +20,17 @@ A critical customer data record was deleted, requiring a restore from AWS Backup
 ## Project Documentation
 
 - **Ticket Logs:**
-  - [Ticket #001: App Unreachable](ticket_logs/TICKET_001_app_down.md)
-  - [Ticket #002: Customer Data Missing](ticket_logs/TICKET_002_data_loss.md)
+  - [Ticket #001: App Unreachable](ticket_logs/INC-001_network_outage.md)
+  - [Ticket #002: Customer Data Missing](ticket_logs/INC-002_data_recovery.md)
 - **Knowledge Base Articles:**
-  - [KB-001: Diagnosing "Application Down" Reports](kb_articles/KB_001_diagnosing_app_downtime.md)
-  - [KB-002: Restoring EC2 Instances via AWS Backup](kb_articles/KB_002_backup_and_restore.md)
+  - [KB-001: Diagnosing "Application Down" Reports](kb_articles/KB-001_network_diagnostics.md)
+  - [KB-002: Restoring EC2 Instances via AWS Backup](kb_articles/KB-002_aws_backup_restore.md)
 - **Customer Communications:**
-  - [Customer Communication Samples](customer_communication_sample.md)
+  - [Customer Communication Samples](customer_communications.md)
 - **Architecture & Setup:**
-  - [Tech Stack Details](docs/03_TECH_STACK.md)
-  - [Project Requirements (PRD)](docs/02_PRD.md)
-  - [Project Definition](docs/01_PROJECT_DEFINITION.md)
+  - [Tech Stack Details](docs/technical_architecture.md)
+  - [Project Requirements (PRD)](docs/requirements_and_goals.md)
+  - [Project Definition](docs/project_overview.md)
 
 ## Lessons Learned & Next Steps
 
