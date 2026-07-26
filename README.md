@@ -1,27 +1,40 @@
-# IT Support Ticket Simulation
+# Cloud Support Engineering & Customer Support Simulation
 
-This project is a simulation of an AWS-based IT/Cloud Support Analyst workflow. It was built to demonstrate core support competencies for a Cloud Support Analyst role, focusing specifically on remote troubleshooting, VPN/network diagnostics, backup/restore operations, log-based root cause analysis, and customer communication. The environment was provisioned via IaC for setup speed, allowing the primary focus to remain entirely on hands-on support analyst operations and documentation.
+This project is a hands-on simulation of an AWS-based Customer Support Analyst / Cloud Support Engineering workflow. Built to directly align with enterprise support requirements, the focus of this environment is providing proactive, empathetic, and highly technical support for software and cloud applications. The simulation validates core competencies including **remote fault diagnosis via VPNs**, **log file analysis**, **backup/restore operations**, **customer communication**, and **knowledge base (KB) article creation**.
 
-## Support Tickets Executed
+## Core Competencies Demonstrated
 
-### Ticket #001 — Service Unreachable (Network vs. App Health)
-A simulated customer reported their application was completely unresponsive externally. By using AWS Systems Manager (SSM) Session Manager for internal access and querying CloudWatch Logs Insights, the issue was isolated purely to a misconfigured Security Group network rule rather than an application crash. The ingress rule was re-authorized, restoring full service.
+* **Remote Issue Resolution & VPNs:** Configured and utilized AWS Client VPN (Mutual TLS) and Systems Manager (SSM) Session Manager to securely access remote servers and diagnose faults internally.
+* **Fault Diagnosis & Log Analysis:** Queried and interpreted application logs using Amazon CloudWatch Logs Insights to isolate complex network configuration issues from application-level failures.
+* **Archiving & Restoring Data:** Executed point-in-time recovery using AWS Backup, restoring corrupted/missing customer data onto replacement EC2 instances and verifying state integrity.
+* **Technical Documentation & KBs:** Translated complex technical findings into usable site manuals and Knowledge Base articles to share best practices across the support team.
+* **Customer-Facing Communication:** Drafted empathetic, non-jargon status updates to keep external customers informed during service disruptions, demonstrating tact and excellent interpersonal skills.
 
-### Ticket #002 — Missing Data Recovery
-A critical customer data record was deleted, requiring a restore from AWS Backup. A manual restore job was executed to spin up a new EC2 instance from a recent recovery point. Direct inspection of the restored instance confirmed successful recovery of the server state, while also revealing a valuable lesson about block snapshot timing and data consistency.
+## Operational Scenarios Executed
+
+### Scenario 01: Service Unreachable (Network vs. Application Health)
+A simulated customer reported their application was completely unresponsive externally. By using SSM Session Manager for secure remote access and querying CloudWatch Logs Insights, the issue was rapidly isolated to a misconfigured Security Group network rule rather than a server crash. The ingress rule was re-configured and verified, restoring full service with minimal downtime.
+
+### Scenario 02: Missing Customer Data Recovery
+A critical customer data record was deleted, requiring rapid response. A manual restore job was executed via AWS Backup to recover a recent recovery point onto a new instance. Direct inspection of the restored environment confirmed successful recovery, while reinforcing a critical lesson on backup timing and data consistency.
 
 ## Tools and Services Used
-- **Compute & Networking:** AWS EC2 (Amazon Linux 2023), AWS Default VPC, Security Groups
-- **Remote Access:** AWS Systems Manager (SSM) Session Manager, AWS Client VPN (Mutual TLS)
+- **Remote Access & Networking:** AWS Client VPN (Mutual TLS), AWS Systems Manager (SSM) Session Manager, AWS Default VPC, Security Groups
 - **Observability:** Amazon CloudWatch Logs Insights, CloudWatch Agent
 - **Data Protection:** AWS Backup (Vaults, Plans, Recovery Points, On-Demand Restores)
+- **Compute:** AWS EC2 (Amazon Linux 2023)
 - **Security:** AWS IAM (Strict Least-Privilege Scoped Policies)
+
+## Visual Evidence & Screenshots
+
+To validate the hands-on execution of these tasks, **over 50 screenshots** capturing terminal commands, AWS Console configurations, VPN connections, log queries, and backup operations have been documented in the repository.
+- [View Visual Evidence (`screenshots/`)](screenshots/)
 
 ## Project Documentation
 
-- **Ticket Logs:**
-  - [Ticket #001: App Unreachable](ticket_logs/INC-001_network_outage.md)
-  - [Ticket #002: Customer Data Missing](ticket_logs/INC-002_data_recovery.md)
+- **Incident Reports:**
+  - [INC-001: App Unreachable](ticket_logs/INC-001_network_outage.md)
+  - [INC-002: Customer Data Missing](ticket_logs/INC-002_data_recovery.md)
 - **Knowledge Base Articles:**
   - [KB-001: Diagnosing "Application Down" Reports](kb_articles/KB-001_network_diagnostics.md)
   - [KB-002: Restoring EC2 Instances via AWS Backup](kb_articles/KB-002_aws_backup_restore.md)
@@ -32,6 +45,6 @@ A critical customer data record was deleted, requiring a restore from AWS Backup
   - [Project Requirements (PRD)](docs/requirements_and_goals.md)
   - [Project Definition](docs/project_overview.md)
 
-## Lessons Learned & Next Steps
+## Lessons Learned & Best Practices
 
-The most significant operational learning from this simulation came during the data recovery ticket. While the AWS Backup restore job completed successfully (reporting `COMPLETED` status), direct validation inside the newly restored instance revealed that a file written seconds before the backup was triggered did not persist in the snapshot. This reinforced a critical real-world support lesson: never trust a "success" status blind. A snapshot captures block storage state at the exact moment of registration, meaning point-in-time consistency requires direct, empirical validation by the support analyst before communicating recovery to a customer.
+The most significant operational learning from this simulation came during the data recovery scenario. While the AWS Backup restore job completed successfully (reporting `COMPLETED` status), direct validation inside the newly restored instance revealed that a file written seconds before the backup was triggered did not persist in the snapshot. This reinforced a critical real-world support lesson: never trust a "success" status blind. A snapshot captures block storage state at the exact moment of registration, meaning point-in-time consistency requires direct, empirical validation by the support analyst before communicating recovery to a customer.
