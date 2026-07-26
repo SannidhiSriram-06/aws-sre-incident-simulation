@@ -1,0 +1,19 @@
+# Local reference files
+04_GROUND_TRUTH.md
+Terminal.md
+
+# VPN files and certs
+*.ovpn
+*.crt
+*.key
+clientvpn-certs/
+
+# Terraform state and folders
+.terraform/
+terraform.tfstate*
+*.tfvars
+
+# AWS Credentials (just in case)
+*.csv
+credentials
+config
