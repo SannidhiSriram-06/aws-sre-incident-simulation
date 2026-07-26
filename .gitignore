@@ -16,3 +16,6 @@ terraform.tfstate*
 *.csv
 credentials
 config
+
+# OS Files
+.DS_Store
